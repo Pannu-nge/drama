@@ -17,7 +17,10 @@ public class DramasController {
     private DramasRepository dramasRepository;
 
     @GetMapping
-    public List<Dramas> getAll(){ return dramasRepository.findAll(); }
+    public List<Dramas> getAll(){
+        return dramasRepository.findAll();
+    }
+
     @GetMapping("{dramaId}")
     public Dramas getByDramaId(@PathVariable Long dramaId){
         return dramasRepository.getOne(dramaId);

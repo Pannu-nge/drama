@@ -41,13 +41,8 @@ public class Dramas {
     )
     private Set<Company> companies;
 
-    @ManyToMany
-    @JoinTable(
-            name = "drama_crew",
-            joinColumns = @JoinColumn(name = "drama_id"),
-            inverseJoinColumns = @JoinColumn(name = "person_id")
-    )
-    private Set<Person> persons;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "dramas")
+    private List<DramaCrew> crews;
 
     public Long getDramaId() {
         return dramaId;
@@ -98,11 +93,12 @@ public class Dramas {
         this.companies = companies;
     }
 
-    public Set<Person> getPersons() {
-        return persons;
+    public List<DramaCrew> getCrews() {
+        return crews;
     }
 
-    public void setPersons(Set<Person> persons) {
-        this.persons = persons;
+    public void setCrews(List<DramaCrew> crews) {
+        this.crews = crews;
     }
+
 }
