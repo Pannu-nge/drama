@@ -1,7 +1,9 @@
 package com.exercise.drama.drama.controller;
 
 import com.exercise.drama.drama.model.Dramas;
+import com.exercise.drama.drama.model.Episodes;
 import com.exercise.drama.drama.model.Seasons;
+import com.exercise.drama.drama.repository.EpisodesRepository;
 import com.exercise.drama.drama.repository.SeasonsRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class SeasonsController {
 
     @Autowired
     private SeasonsRepository seasonsRepository;
+
+    @Autowired
+    private EpisodesRepository episodesRepository;
 
     @GetMapping
     public List<Seasons> getAll(){ return seasonsRepository.findAll(); }
@@ -36,5 +41,11 @@ public class SeasonsController {
     @RequestMapping(value = "{seasonId}", method = RequestMethod.DELETE)
     public void deleteBySeasonId(@PathVariable Long seasonId){
         seasonsRepository.deleteById(seasonId);
+    }
+
+    //Finding episodes with season id
+    @GetMapping("episodes/{seasonId}")
+    public List<Episodes> getEpisodesBySeasonId(@PathVariable Long seasonId){
+        return episodesRepository.findBySeasonId(seasonId);
     }
 }

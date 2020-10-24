@@ -1,6 +1,8 @@
 package com.exercise.drama.drama.controller;
 
+import com.exercise.drama.drama.model.Dramas;
 import com.exercise.drama.drama.model.Person;
+import com.exercise.drama.drama.repository.DramasRepository;
 import com.exercise.drama.drama.repository.PersonRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class PersonController {
 
     @Autowired
     private PersonRepository personRepository;
+
+    @Autowired
+    private DramasRepository dramasRepository;
 
     @GetMapping
     public List<Person> getAll(){ return personRepository.findAll(); }
@@ -35,5 +40,11 @@ public class PersonController {
     @RequestMapping(value = "{personId}", method = RequestMethod.DELETE)
     public void deleteByPersonId(@PathVariable Long personId){
         personRepository.deleteById(personId);
+    }
+
+    //Searching drama list with person id
+    @GetMapping("dramas/{personId}")
+    public List<Dramas> getDramasByPersonId(@PathVariable Long personId){
+        return dramasRepository.findByCrews_Person_PersonId(personId);
     }
 }

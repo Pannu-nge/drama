@@ -18,13 +18,13 @@ public class Person {
     private String nationality;
     private Date dateOfBirth;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(
             name = "drama_crew",
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Set<Role> roles;
+    private Set<Role> roles;*/
 
     public Long getPersonId() {
         return personId;
@@ -57,11 +57,11 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Set<Role> getRoles() {
+    /*public Set<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 }

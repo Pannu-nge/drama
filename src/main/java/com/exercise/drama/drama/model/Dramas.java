@@ -20,10 +20,12 @@ public class Dramas {
     @Temporal(TemporalType.DATE)
     private Date releasedDate;
 
-    @OneToMany(cascade = CascadeType.REMOVE,
+    @OneToMany(
+            mappedBy = "dramaId",
             fetch = FetchType.LAZY,
-            mappedBy = "dramas")
-    private Set<Seasons> seasons = new HashSet<Seasons>();
+            cascade = CascadeType.REMOVE
+    )
+    private java.util.List<Seasons> seasons;
 
     @ManyToMany
     @JoinTable(
@@ -69,11 +71,11 @@ public class Dramas {
         this.releasedDate = releasedDate;
     }
 
-    public Set<Seasons> getSeasons() {
+    public List<Seasons> getSeasons() {
         return seasons;
     }
 
-    public void setSeasons(Set<Seasons> seasons) {
+    public void setSeasons(List<Seasons> seasons) {
         this.seasons = seasons;
     }
 

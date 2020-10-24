@@ -13,6 +13,8 @@ public class Seasons {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seasonId;
     private String seasonName;
+    @Column(name = "drama_id", nullable = false)
+    private Long dramaId;
 
     @OneToMany(
             mappedBy = "seasonId",
@@ -20,11 +22,6 @@ public class Seasons {
             cascade = CascadeType.REMOVE
     )
     private java.util.List<Episodes> episodes;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "drama_id", nullable = false)
-    @JsonIgnoreProperties("seasons")
-    private Dramas dramas;
 
     public Long getSeasonId() {
         return seasonId;
@@ -44,10 +41,10 @@ public class Seasons {
     public void setEpisodes(List<Episodes> episodes) {
         this.episodes = episodes;
     }
-    public Dramas getDramas() {
-        return dramas;
+    public Long getDramaId() {
+        return dramaId;
     }
-    public void setDramas(Dramas dramas) {
-        this.dramas = dramas;
+    public void setDramaId(Long dramaId) {
+        this.dramaId = dramaId;
     }
 }

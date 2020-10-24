@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"genreId\": 8,\r\n    \"genreType\": \"Crime\"\r\n}",
+							"raw": "{\r\n    \"genreType\": \"Crime\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -57,13 +57,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/genre/7",
+							"raw": "{{host}}/genre/5",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"genre",
-								"7"
+								"5"
 							]
 						}
 					},
@@ -86,6 +86,514 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genreId\": 4,\r\n    \"genreType\": \"Thriller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/genre",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"genre"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Joo Hyuk\",\r\n    \"lastName\": \"Nam\",\r\n    \"nationality\": \"Korean\",\r\n    \"dateOfBirth\": \"1994-02-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/person",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/person",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/person/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/person/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personId\": 1,\r\n    \"firstName\": \"Min Ho\",\r\n    \"lastName\": \"Lee\",\r\n    \"nationality\": \"Korean\",\r\n    \"dateOfBirth\": \"1986-06-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/person",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Episode",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"episodeName\": \"Episode\",\r\n    \"runtime\": \"125min\",\r\n    \"seasonId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/episodes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/episodes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/episodes/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"episodes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/episodes/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"episodes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBySeasonId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/seasons/episodes/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"seasons",
+								"episodes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"episodeId\": 2,\r\n    \"episodeName\": \"Updated Episode\",\r\n    \"runtime\": \"125min\",\r\n    \"seasonId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/episodes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Season",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seasonName\": \"New Season\",\r\n    \"dramaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/seasons",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"seasons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/seasons",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"seasons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/seasons/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"seasons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/seasons/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"seasons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByDramaId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas/seasons/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"seasons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 1,\r\n    \"companyName\": \"Updated company name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"SBS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/company/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/company/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"company",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"personId\": 1,\r\n    \"firstName\": \"Min Ho\",\r\n    \"lastName\": \"Lee\",\r\n    \"nationality\": \"Korean\",\r\n    \"dateOfBirth\": \"1986-06-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/person",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -100,7 +608,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"roleId\": 8,\r\n    \"roleType\": \"Director\"\r\n}",
+							"raw": "{\r\n    \"roleName\": \"Director\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -142,13 +650,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/role/7",
+							"raw": "{{host}}/role/10",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"role",
-								"7"
+								"10"
 							]
 						}
 					},
@@ -171,6 +679,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": 5,\r\n    \"roleName\": \"Updated role\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/role",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -184,7 +718,167 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{host}}/dramas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByGenreId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/genre/dramas/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"genre",
+								"dramas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByPersonId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/person/dramas/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"dramas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddGenre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dramaId\": 1,\r\n    \"genreId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/dramas/genre",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"genre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveGenre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dramaId\": 1,\r\n    \"genreId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/dramas/genre",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"genre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mr. Sunshine\",\r\n    \"description\": \"A poor guy comes back to his hometown\",\r\n    \"releasedDate\": \"2019-08-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/dramas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas"
+							]
 						}
 					},
 					"response": []

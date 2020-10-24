@@ -14,7 +14,7 @@ public class Episodes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long episodeId;
     private String episodeName;
-    private Long runtime;
+    private String runtime;
     @Column(name = "season_id", nullable = false)
     private Long seasonId;
 
@@ -30,10 +30,10 @@ public class Episodes {
     public void setEpisodeName(String episodeName) {
         this.episodeName = episodeName;
     }
-    public Long getRuntime() {
+    public String getRuntime() {
         return runtime;
     }
-    public void setRuntime(Long runtime) {
+    public void setRuntime(String runtime) {
         this.runtime = runtime;
     }
     public Long getSeasonId() {
