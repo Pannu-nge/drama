@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.*;
 
 @RestController
@@ -21,6 +22,12 @@ public class DramasController {
 
     @Autowired
     private SeasonsRepository seasonsRepository;
+
+    @Autowired
+    private PersonRepository personRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     @GetMapping
     public List<Dramas> getAll(){
@@ -77,5 +84,18 @@ public class DramasController {
     public List<Seasons> getSeasonsByDramaId(@PathVariable Long dramaId){
         return seasonsRepository.findByDramaId(dramaId);
     }
+
+    //Adding crew
+    @Transactional
+    @PostMapping("crew")
+    public Dramas addCrew(@RequestBody Map<String, Long> dramacrew){
+        Dramas dramas=dramasRepository.getOne(dramacrew.get("dramaId"));
+        Person person = personRepository.getOne(dramacrew.get("personId"));
+        Role role = roleRepository.getOne(dramacrew.get("roleId"));
+        dramasRepository.saveDramaCrew(dramas.getDramaId(), role.getRoleId(), person.getPersonId());
+        return dramasRepository.getOne(dramas.getDramaId());
+    }
+
+
 
 }
